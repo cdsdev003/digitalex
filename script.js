@@ -652,7 +652,7 @@ function endGame(who) {
     liff.sendMessages([
         {
             type: 'text',
-            text: `Computer is score ${score.computer} <br> Draws is score ${score.ties}  <br>  Player is score ${score.player} `,
+            text: `Computer is score ${score.computer} \r\n Draws is score ${score.ties}  \r\n  Player is score ${score.player} `,
         },
     ]);
     setTimeout(restartGame, 800);
