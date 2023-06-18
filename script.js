@@ -649,5 +649,29 @@ function endGame(who) {
         var id = "cell" + i.toString();
         document.getElementById(id).style.cursor = "default";
     }
+    liff.sendMessages([
+        {
+            type: 'text',
+            text: `Computer is score ${score.computer} <br> Draws is score ${score.ties}  <br>  Player is score ${score.player} `,
+        },
+    ]);
     setTimeout(restartGame, 800);
 }
+
+
+function initializeLiff(myLiffId) {
+    let lineLiff = liff
+         .init({
+             liffId: myLiffId,
+         })
+         .then(() => {
+             alert('LIFF init success!');
+         })
+         .catch((err) => {
+             alert(`error: ${JSON.stringify(err)}`);
+         });
+ }
+
+ document.addEventListener('DOMContentLoaded', () => {
+     initializeLiff('1661427777-7ll0rzd4')
+ });
