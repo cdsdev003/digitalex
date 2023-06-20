@@ -660,12 +660,13 @@ function endGame(who) {
 
 
 function initializeLiff(myLiffId) {
-    let lineLiff = liff
+    liff
          .init({
              liffId: myLiffId,
          })
          .then(() => {
              alert('LIFF init success!');
+             alert("Profile", JSON.stringify(liff.getProfile()))
          })
          .catch((err) => {
              alert(`error: ${JSON.stringify(err)}`);
